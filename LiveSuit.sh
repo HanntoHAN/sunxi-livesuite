@@ -12,8 +12,9 @@ else
 	echo "Error: unknown architecture ${MACHINE}"
 	exit
 fi
+THIRDPARTY_LIB="thirdparty/lib"
 
 echo "Starting ${BIN_DIR}/${APP}."
 echo ""
 
-LD_LIBRARY_PATH=${TOP_DIR}/${BIN_DIR}/ ${BIN_DIR}/${APP}
+LD_LIBRARY_PATH=${TOP_DIR}/${BIN_DIR}:${TOP_DIR}/${THIRDPARTY_LIB} ${BIN_DIR}/${APP}
